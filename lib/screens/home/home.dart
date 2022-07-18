@@ -14,18 +14,47 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: _buildAppBar(),
-        body: SingleChildScrollView(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                EmojiText(),
-                SearchInput(),
-                FeatureCourse(),
-                ActiveCourse()
-              ]),
-        ));
+      appBar: _buildAppBar(),
+      body: SingleChildScrollView(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              EmojiText(),
+              SearchInput(),
+              FeatureCourse(),
+              ActiveCourse()
+            ]),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: kBackground,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          items: [
+            BottomNavigationBarItem(
+                label: 'home',
+                icon: Container(
+                  padding: EdgeInsets.only(bottom: 5),
+                  decoration: BoxDecoration(
+                      border:
+                          Border(bottom: BorderSide(color: kAccent, width: 2))),
+                  child: Text(
+                    'Home',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                )),
+            BottomNavigationBarItem(
+                label: 'calender',
+                icon: Image.asset('assets/icons/calendar.png', width: 20)),
+            BottomNavigationBarItem(
+                label: 'bookmark',
+                icon: Image.asset('assets/icons/ribbon.png', width: 20)),
+            BottomNavigationBarItem(
+                label: 'user',
+                icon: Image.asset('assets/icons/user.png', width: 20)),
+          ]),
+    );
   }
 
   AppBar _buildAppBar() {
