@@ -32,17 +32,57 @@ class CustomAppBar extends StatelessWidget {
               )
             ],
           ),
-          Positioned(bottom: 0,
-          right: 40,
-          child: Container(height: 50,
-          width: 110,
-          child: ElevatedButton(style: ElevatedButton.styleFrom(
-            primary: kAccent,
-            elevation: 0,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))
-          ),onPressed: () {
-            
-          },child: Text('Buy Now'),),),)
+          Positioned(
+            bottom: 0,
+            right: 40,
+            child: Container(
+              height: 50,
+              width: 110,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: kAccent,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15))),
+                onPressed: () {},
+                child: Text('Buy Now'),
+              ),
+            ),
+          ),
+          Positioned(
+              top: MediaQuery.of(context).padding.top,
+              left: 25,
+              child: Container(
+                height: 50,
+                width: 50,
+                padding: EdgeInsets.only(left: 5),
+                decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(15)),
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+                  iconSize: 20,
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              )),
+              Positioned(top: MediaQuery.of(context).padding.top,
+              right: 25,
+              child: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(15)),
+                child: IconButton(
+                  icon: Icon(Icons.bookmark, color: Colors.white,),
+                  iconSize: 20,
+                  onPressed: () {
+                    
+                  },
+                ),
+              ))
         ],
       ),
     );
