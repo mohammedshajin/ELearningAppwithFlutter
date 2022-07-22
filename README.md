@@ -1,6 +1,6 @@
-# course_app
+# E-Learning Mobile Application
 
-A new Flutter project.
+E-learning UI with Flutter
 
 
 ![](assets/images/final.jpg)
